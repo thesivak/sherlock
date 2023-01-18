@@ -12,10 +12,10 @@ defineProps({
 </script>
 
 <template>
-  <li class="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow">
-    <div class="relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500">
+  <li class="col-span-1 rounded-lg bg-white shadow divide-y divide-gray-200">
+    <div class="relative bg-white p-6 group focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500">
       <div>
-        <span class="rounded-lg inline-flex p-3 bg-teal-50 text-teal-700 ring-4 ring-white">
+        <span class="inline-flex rounded-lg bg-teal-50 p-3 text-teal-700 ring-4 ring-white">
           <svg
             class="h-6 w-6"
             x-description="Heroicon name: outline/clock"
@@ -48,7 +48,8 @@ defineProps({
           </a>
         </h3>
         <p class="mt-2 text-sm text-gray-500">
-          Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.
+          Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo
+          et molestiae.
         </p>
       </div>
       <span
@@ -61,7 +62,9 @@ defineProps({
           fill="currentColor"
           viewBox="0 0 24 24"
         >
-          <path d="M20 4h1a1 1 0 00-1-1v1zm-1 12a1 1 0 102 0h-2zM8 3a1 1 0 000 2V3zM3.293 19.293a1 1 0 101.414 1.414l-1.414-1.414zM19 4v12h2V4h-2zm1-1H8v2h12V3zm-.707.293l-16 16 1.414 1.414 16-16-1.414-1.414z" />
+          <path
+            d="M20 4h1a1 1 0 00-1-1v1zm-1 12a1 1 0 102 0h-2zM8 3a1 1 0 000 2V3zM3.293 19.293a1 1 0 101.414 1.414l-1.414-1.414zM19 4v12h2V4h-2zm1-1H8v2h12V3zm-.707.293l-16 16 1.414 1.414 16-16-1.414-1.414z"
+          />
         </svg>
       </span>
     </div>

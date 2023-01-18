@@ -1,4 +1,31 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+
+const searchQuery = ref('');
+const searchRef = ref<HTMLInputElement | null>(null);
+
+const emit = defineEmits(['search']);
+
+const handleSearch = () => {
+    if (searchQuery.value) {
+        emit('search', searchQuery.value);
+    }
+}
+
+const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        if (searchRef.value) {
+            searchRef.value.focus();
+        }
+    }
+}
+
+onMounted(() => {
+    window.addEventListener('keydown', handleKeyDown);
+})
+
+</script>
 <template>
   <div class="mx-auto mt-8 flex max-w-7xl items-center justify-center sm:px-6 lg:px-8">
     <div class="relative w-1/2">
@@ -19,11 +46,12 @@
         </svg>
       </div>
       <input
-        id="search"
+        ref="searchRef"
+        v-model="searchQuery"
         type="text"
-        name="search"
         placeholder="Sherlock me..."
         class="block w-full rounded-md border-gray-300 pr-12 pl-10 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+        @keyup.enter="handleSearch"
       >
       <div class="absolute inset-y-0 right-0 flex py-1.5 pr-1.5">
         <kbd
