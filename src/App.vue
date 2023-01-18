@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import Search from './components/Search.vue'
 import Results from './components/Results.vue';
+
+// Search url for fetching results
+// GET http://localhost:8080/records/search/=sherlock
+
 </script>
 
 <template>
