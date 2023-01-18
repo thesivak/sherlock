@@ -49,7 +49,7 @@ onMounted(() => {
         ref="searchRef"
         v-model="searchQuery"
         type="text"
-        placeholder="Sherlock me..."
+        placeholder="Search ..."
         class="block w-full rounded-md border-gray-300 pr-12 pl-10 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
         @keyup.enter="handleSearch"
       >
