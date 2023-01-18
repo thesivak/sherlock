@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Search from './components/Search.vue'
-import Results from "./components/Results.vue";
+import Results from './components/Results.vue';
 </script>
 
 <template>
@@ -12,9 +12,8 @@ import Results from "./components/Results.vue";
         </h1>
       </div>
     </header>
-    <Search/>
+    <Search />
   </div>
-    <hr>
-    <Results/>
-
+  <hr>
+  <Results />
 </template>
