@@ -46,7 +46,7 @@ const handleSearch = async (searchQuery: string) => {
 </script>
 
 <template>
-  <div class="h-screen w-screen bg-slate-100">
+  <div>
     <div class="py-6">
       <div class="flex justify-center">
         <div class="w-96 relative">

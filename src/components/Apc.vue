@@ -13,34 +13,6 @@ const { data } = toRefs(props);
 </script>
 
 <template>
-  <div class="flex justify-between">
-    <div class="flex space-x-3">
-      <svg
-        class="w-6 h-6"
-        viewBox="0 0 13 13"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle
-          cx="6.5"
-          cy="6.5"
-          r="6.5"
-          fill="#E2FBE8"
-        />
-        <circle
-          cx="6.49994"
-          cy="6.5"
-          r="3.5"
-          fill="#77DB89"
-        />
-      </svg>
-      <h2>{{ data.name }}</h2>
-    </div>
-    <a
-      href=""
-      class="text-sm underline text-slate-400"
-    >Goto</a>
-  </div>
   <div
     v-for="(item) of Object.entries(data)"
     :key="item"

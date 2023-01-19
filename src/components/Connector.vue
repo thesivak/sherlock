@@ -37,7 +37,7 @@ const { data } = toRefs(props);
       <h2>{{ data.name }}</h2>
     </div>
     <a
-      href=""
+      :href="data.linkToConnector"
       class="text-sm underline text-slate-400"
     >Goto</a>
   </div>
