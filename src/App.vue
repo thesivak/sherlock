@@ -40,16 +40,20 @@ const handleSearch = async (searchQuery: string) => {
 <template>
   <div class="h-screen w-screen bg-slate-100">
     <div class="py-6">
-      <header>
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1
-            class="text-center text-6xl font-bold font-semibold leading-tight tracking-tight tracking-widest text-gray-900"
-            style="font-family: 'IBM Plex Serif', serif;"
+      <div class="flex justify-center">
+        <div class="w-96 relative">
+          <img
+            class="w-96"
+            src="https://www.seekpng.com/png/detail/190-1901809_sherlock-holmes-wallpaper-actors-sherlock-holmes-logo.png"
+            alt=""
           >
-            Sherlock
-          </h1>
+          <img
+            class="w-16 absolute bottom-0 right-0 mb-2 mr-6 rotate-12"
+            src="https://i0.wp.com/www.confidentvoice.com/blog/wp-content/uploads/2013/06/the-letter-G.png"
+            alt=""
+          >
         </div>
-      </header>
+      </div>
       <Search @search="handleSearch" />
     </div>
     <hr>
