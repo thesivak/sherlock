@@ -42,11 +42,10 @@ const { data } = toRefs(props);
     >Goto</a>
   </div>
   <div
-    v-for="(item, index) of Object.entries(data)"
+    v-for="(item) of Object.entries(data)"
     :key="item"
   >
     <div
-      v-if="index !== 0"
       class="flex justify-between text-sm"
     >
       <span class="text-slate-600">{{ item[0] }}</span>

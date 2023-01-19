@@ -10,6 +10,7 @@ const props = defineProps({
 });
 
 const { data } = toRefs(props);
+
 </script>
 
 <template>
@@ -46,7 +47,7 @@ const { data } = toRefs(props);
     :key="item"
   >
     <div
-      v-if="index !== 0"
+      v-if="index !== 0 && item[1] !== null"
       class="flex justify-between text-sm"
     >
       <span class="text-slate-600">{{ item[0] }}</span>

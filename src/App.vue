@@ -2,20 +2,24 @@
 import Search from './components/Search.vue'
 import Results from './components/Results.vue';
 import { checkStatus, searchByQuery } from './helpers/api';
-import { ref } from 'vue';
+import { Ref, ref } from 'vue';
 
-const resultsData = ref([]);
+const resultsData: Ref<Map<string, any[]>> = ref(new Map());
 const handleSearch = async (searchQuery: string) => {
     let idsArray: string[] = [];
     await searchByQuery(searchQuery)
         .then(data => {
-            resultsData.value = [];
-            idsArray = data
+            resultsData.value = new Map();
+            idsArray = data;
         });
     for (const id of idsArray) {
         await checkStatus(id).then(response => {
             if (response.data.status === 'FOUND') {
-                resultsData.value.push(response.data);
+                if (resultsData.value.has(response.data.type)) {
+                    resultsData.value.get(response.data.type)!.push(response.data);
+                } else {
+                    resultsData.value.set(response.data.type, [response.data]);
+                }
             } else if (response.data.status === 'PENDING') {
                 let counter = 0;
                 const repeatCheckId = setInterval(async function repeatCheck() {
@@ -27,7 +31,11 @@ const handleSearch = async (searchQuery: string) => {
                     await checkStatus(id)
                         .then(response => {
                             if (response.data.status === 'FOUND') {
-                                resultsData.value.push(response.data);
+                                if (resultsData.value.has(response.data.type)) {
+                                    resultsData.value.get(response.data.type)!.push(response.data);
+                                } else {
+                                    resultsData.value.set(response.data.type, [response.data]);
+                                }
                             }
                         });
                 }, 2000);
@@ -53,6 +61,6 @@ const handleSearch = async (searchQuery: string) => {
       <Search @search="handleSearch" />
     </div>
     <hr class="my-6">
-    <Results />
+    <Results :data="resultsData" />
   </div>
 </template>
