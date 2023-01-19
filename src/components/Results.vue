@@ -5,7 +5,7 @@ import { Record } from '../types';
 const records: Record[] = [
     {
         'name': 'WordPress',
-        'localToken': 'xxx',
+        'localToken': '66b67c21-280c-4fe4-a21a-81fc7f867b6f',
         'urlId': 'xxx',
         'linkToConnector': 'xxx',
     },
