@@ -29,9 +29,9 @@ onMounted(() => {
 <template>
   <div class="mx-auto mt-8 flex max-w-7xl items-center justify-center sm:px-6 lg:px-8">
     <div class="relative w-1/2">
-      <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+      <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
         <svg
-          class="h-5 w-5 text-gray-400"
+          class="h-7 w-7 text-gray-400"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -50,10 +50,10 @@ onMounted(() => {
         v-model="searchQuery"
         type="text"
         placeholder="Search ..."
-        class="block w-full rounded-md border-gray-300 pr-12 pl-10 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+        class="block w-full rounded-xl border-gray-300 py-4 text-md font-light pr-12 pl-14 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
         @keyup.enter="handleSearch"
       >
-      <div class="absolute inset-y-0 right-0 flex py-1.5 pr-1.5">
+      <div class="absolute inset-y-0 right-0 flex py-3 pr-4">
         <kbd
           class="inline-flex items-center rounded border border-gray-200 px-2 font-sans text-sm font-medium text-gray-400"
         >⌘K</kbd>
