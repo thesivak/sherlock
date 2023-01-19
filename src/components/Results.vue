@@ -1,11 +1,34 @@
 <script setup lang="ts">
-import Card from './Card.vue';
+import Connector from './Connector.vue';
+import { Record } from '../types';
+
+const records: Record[] = [
+    {
+        'name': 'WordPress',
+        'localToken': 'xxx',
+        'urlId': 'xxx',
+        'linkToConnector': 'xxx',
+    },
+    {
+        'name': 'Drupal',
+        'localToken': 'xxx',
+        'urlId': 'xxx',
+        'linkToConnector': 'xxx',
+    },
+    {
+        'name': 'Contentful',
+        'localToken': 'xxx',
+        'urlId': 'xxx',
+        'linkToConnector': 'xxx',
+    },
+];
 </script>
 <template>
   <div
     class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 px-5"
   >
-    <Card
+    <Connector
+      :records="records"
       resource-name="Connectors"
       :results-count="712"
     />
