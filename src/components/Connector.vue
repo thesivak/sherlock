@@ -83,7 +83,7 @@ defineProps({
                     fill="#77DB89"
                   />
                 </svg>
-                <h2>test</h2>
+                <h2>{{ record.name }}</h2>
               </div>
               <a
                 href=""
