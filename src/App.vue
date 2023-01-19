@@ -52,7 +52,7 @@ const handleSearch = async (searchQuery: string) => {
       </header>
       <Search @search="handleSearch" />
     </div>
-    <hr class="my-6">
+    <hr>
     <Results />
   </div>
 </template>

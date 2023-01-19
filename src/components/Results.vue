@@ -25,7 +25,7 @@ const records: Record[] = [
 </script>
 <template>
   <div
-    class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 px-5"
+    class="columns-3 space-y-4 p-6"
   >
     <Connector
       :records="records"
