@@ -25,7 +25,7 @@ const getCardType = (cardType: string): string => {
 </script>
 <template>
   <div
-    class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 px-5"
+    class="columns-3 space-y-4 p-6"
   >
     <Card
       v-for="card in mapToArray"
@@ -33,9 +33,5 @@ const getCardType = (cardType: string): string => {
       :card-type="getCardType(card.key)"
       :data="card.value"
     />
-    <!--    <Connector-->
-    <!--      :records="records"-->
-    <!--      resource-name="Connectors"-->
-    <!--    />-->
   </div>
 </template>

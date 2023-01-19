@@ -38,7 +38,7 @@ export default defineComponent({
 
 <template>
   <div
-    class="relative col-span-1 rounded-md border bg-white p-6 shadow transition-all duration-200 b group focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 hover:shadow-xl"
+    class="relative break-inside-avoid cursor-pointer rounded-md border bg-white p-6 shadow transition-all duration-200 b group focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 hover:shadow-xl"
   >
     <div>
       <span class="inline-flex rounded-lg bg-teal-50 p-3 text-teal-700 ring-4 ring-white">
@@ -62,16 +62,7 @@ export default defineComponent({
     </div>
     <div class="mt-8">
       <h3 class="text-lg font-medium">
-        <a
-          href="#"
-          class="focus:outline-none"
-        >
-          <span
-            class="absolute inset-0"
-            aria-hidden="true"
-          />
-          {{ cardType }}
-        </a>
+        {{ cardType }}
       </h3>
       <div class="mt-12">
         <ul class="w-full space-y-6">
