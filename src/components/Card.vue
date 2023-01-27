@@ -30,7 +30,7 @@ export default defineComponent({
     setup(props) {
         const { cardType, data } = toRefs(props);
 
-        const parsedData = computed(() => data.value.filter(it => it.data));
+        const parsedData = computed(() => data.value.filter(it => (it.data as []).length || it.data));
 
         const parsedCardType: Ref<string | null> = computed((): string | null => cardType.value?.length ? cardType.value : null);
         const parseType = (type: string, data: any): string => {
