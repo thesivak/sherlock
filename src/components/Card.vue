@@ -28,9 +28,7 @@ export default defineComponent({
         },
     },
     setup(props) {
-        const { cardType, data } = toRefs(props);
-
-        const parsedData = computed(() => data.value.filter(it => it.data));
+        const { cardType } = toRefs(props);
 
         const parsedCardType: Ref<string | null> = computed((): string | null => cardType.value?.length ? cardType.value : null);
         const parseType = (type: string, data: any): string => {
@@ -42,7 +40,6 @@ export default defineComponent({
 
         return {
             parsedCardType,
-            parsedData,
             parseType,
         }
     },
@@ -51,6 +48,7 @@ export default defineComponent({
 
 <template>
   <div
+    v-if="data !== []"
     class="relative rounded-md border bg-white p-6 shadow focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500"
   >
     <div>
@@ -83,7 +81,7 @@ export default defineComponent({
       <div class="mt-12">
         <ul class="w-full space-y-6">
           <li
-            v-for="record in parsedData"
+            v-for="record in data"
             :key="record.type"
           >
             <Component
