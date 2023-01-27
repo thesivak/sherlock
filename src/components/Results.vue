@@ -30,7 +30,7 @@ const getCardType = (cardType: string): string => {
     <Card
       v-for="card in mapToArray"
       :key="card.key"
-      :card-type="getCardType(card.key)"
+      :card-type="card.key"
       :data="card.value"
     />
   </div>

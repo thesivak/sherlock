@@ -18,11 +18,6 @@ const { data } = toRefs(props);
 </script>
 
 <template>
-  <div class="flex justify-between">
-    <div class="flex space-x-3">
-      <h2>{{ type }}</h2>
-    </div>
-  </div>
   <Accordion
     v-for="item in data"
     :key="item"
