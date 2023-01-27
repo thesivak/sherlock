@@ -30,6 +30,8 @@ export default defineComponent({
     setup(props) {
         const { cardType } = toRefs(props);
 
+        console.log(props.data);
+
         const parsedCardType: Ref<string | null> = computed((): string | null => cardType.value?.length ? cardType.value : null);
         const parseType = (type: string, data: any): string => {
             if (data.length) {
@@ -48,29 +50,9 @@ export default defineComponent({
 
 <template>
   <div
-    v-if="data !== []"
+    v-if="data[0].data !== []"
     class="relative rounded-md border bg-white p-6 shadow focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500"
   >
-    <div>
-      <span class="inline-flex rounded-lg bg-teal-50 p-3 text-teal-700 ring-4 ring-white">
-        <svg
-          class="h-6 w-6"
-          x-description="Heroicon name: outline/clock"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-      </span>
-    </div>
     <div class="mt-8">
       <h3
         v-if="parsedCardType"
