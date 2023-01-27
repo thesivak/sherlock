@@ -19,7 +19,7 @@ const getCardType = (cardType: string): string => {
     if (AVAILABLE_CARD_TYPES.includes(cardType)) {
         return cardType;
     } else {
-        return 'Default';
+        return '';
     }
 };
 </script>

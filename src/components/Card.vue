@@ -1,9 +1,10 @@
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
+import { computed, defineComponent, PropType, Ref, toRefs } from 'vue';
 import Apc from './Apc.vue';
 import Connector from './Connector.vue';
 import Credentials from './Credentials.vue';
 import Default from './Default.vue';
+import List from './List.vue';
 import { AVAILABLE_CARD_TYPES } from '../constants/constants';
 
 export default defineComponent({
@@ -13,23 +14,32 @@ export default defineComponent({
         Connector,
         Credentials,
         Default,
+        List,
     },
     props: {
         cardType: {
             type: String,
-            required: true,
+            required: false,
+            default: '',
         },
         data: {
             type: Object as PropType<any[]>,
             required: true,
         },
     },
-    setup() {
-        const parseType = (type: string): string => {
+    setup(props) {
+        const { cardType } = toRefs(props);
+
+        const parsedCardType: Ref<string | null> = computed((): string | null => cardType.value?.length ? cardType.value : null);
+        const parseType = (type: string, data: any): string => {
+            if (data.length) {
+                return 'List';
+            }
             return AVAILABLE_CARD_TYPES.includes(type) ? type : 'Default';
         };
 
         return {
+            parsedCardType,
             parseType,
         }
     },
@@ -61,8 +71,11 @@ export default defineComponent({
       </span>
     </div>
     <div class="mt-8">
-      <h3 class="text-lg font-medium">
-        {{ cardType }}
+      <h3
+        v-if="parsedCardType"
+        class="text-lg font-medium"
+      >
+        {{ parsedCardType }}
       </h3>
       <div class="mt-12">
         <ul class="w-full space-y-6">
@@ -71,7 +84,8 @@ export default defineComponent({
             :key="record.type"
           >
             <Component
-              :is="parseType(record.type)"
+              :is="parseType(record.type, record.data)"
+              v-if="record.data"
               :data="record.data"
             />
           </li>
