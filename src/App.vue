@@ -68,3 +68,9 @@ const handleSearch = async (searchQuery: string) => {
     <Results :data="resultsData" />
   </div>
 </template>
+
+<style>
+body {
+  background-color: #F6F6F6;
+}
+</style>

@@ -4,7 +4,7 @@ import { computed, toRefs } from 'vue';
 import { AVAILABLE_CARD_TYPES } from '../constants/constants';
 
 const props = defineProps<{
-    data: Map<string, any[]>;
+  data: Map<string, any[]>;
 }>();
 
 const { data } = toRefs(props);
@@ -25,7 +25,7 @@ const getCardType = (cardType: string): string => {
 </script>
 <template>
   <div
-    class="columns-3 space-y-4 p-6"
+    class="grid grid-cols-3 gap-5 p-6"
   >
     <Card
       v-for="card in mapToArray"

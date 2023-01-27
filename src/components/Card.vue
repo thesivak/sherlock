@@ -48,7 +48,7 @@ export default defineComponent({
 
 <template>
   <div
-    class="relative break-inside-avoid rounded-md border bg-white p-6 shadow focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500"
+    class="relative rounded-md border bg-white p-6 shadow focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500"
   >
     <div>
       <span class="inline-flex rounded-lg bg-teal-50 p-3 text-teal-700 ring-4 ring-white">
