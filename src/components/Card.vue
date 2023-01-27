@@ -33,7 +33,7 @@ export default defineComponent({
         const parsedCardType: Ref<string | null> = computed((): string | null => cardType.value?.length ? cardType.value : null);
         const parseType = (type: string, data: any): string => {
             if (data.length) {
-                return 'List';
+                return type;
             }
             return AVAILABLE_CARD_TYPES.includes(type) ? type : 'Default';
         };
@@ -48,6 +48,7 @@ export default defineComponent({
 
 <template>
   <div
+    v-if="data.length"
     class="relative rounded-md border bg-white p-6 shadow focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500"
   >
     <div>
@@ -87,6 +88,7 @@ export default defineComponent({
               :is="parseType(record.type, record.data)"
               v-if="record.data"
               :data="record.data"
+              :type="cardType"
             />
           </li>
         </ul>

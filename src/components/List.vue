@@ -4,6 +4,10 @@ import { PropType, toRefs } from 'vue';
 import Accordion from './Accordion.vue';
 
 const props = defineProps({
+    type: {
+        type: String,
+        required: true,
+    },
     data: {
         type: Object as PropType<any[]>,
         required: true,
@@ -16,7 +20,7 @@ const { data } = toRefs(props);
 <template>
   <div class="flex justify-between">
     <div class="flex space-x-3">
-      <h2>List</h2>
+      <h2>{{ type }}</h2>
     </div>
   </div>
   <Accordion
