@@ -33,7 +33,7 @@ export default defineComponent({
         const parsedCardType: Ref<string | null> = computed((): string | null => cardType.value?.length ? cardType.value : null);
         const parseType = (type: string, data: any): string => {
             if (data.length) {
-                return type;
+                return 'List';
             }
             return AVAILABLE_CARD_TYPES.includes(type) ? type : 'Default';
         };
